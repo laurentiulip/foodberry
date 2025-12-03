@@ -79,6 +79,99 @@ button:active {
     border-radius: 3px;
 }
 
+/* Calculator styles */
+.calculator-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.calculator {
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 350px;
+}
+
+.calculator-display {
+    background: #000;
+    color: #fff;
+    font-size: 48px;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    min-height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow-x: auto;
+    overflow-y: hidden;
+    word-break: break-all;
+    line-height: 1.2;
+    flex-direction: column;
+}
+
+.calculator-display::-webkit-scrollbar {
+    height: 4px;
+}
+
+.calculator-display::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 2px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.calc-btn {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: 70px;
+    width: 70px;
+}
+
+.calc-btn:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+.calc-btn.number {
+    background: #333;
+    color: #fff;
+}
+
+.calc-btn.operator {
+    background: #ff9500;
+    color: #fff;
+}
+
+.calc-btn.clear {
+    background: #a5a5a5;
+    color: #000;
+}
+
+.calc-btn.equals {
+    background: #ff9500;
+    color: #fff;
+}
+
+.calc-btn.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+    width: 152px;
+    text-align: left;
+    padding-left: 30px;
+}
+
 /* Design responsive pentru telefoane */
 @media (max-width: 768px) {
     body {
@@ -112,6 +205,15 @@ button:active {
         font-size: 13px;
         padding: 12px;
     }
+    
+    .calculator-container {
+        justify-content: center;
+    }
+    
+    .calculator {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -138,5 +240,26 @@ button:active {
         max-height: 50vh;
         font-size: 12px;
         padding: 10px;
+    }
+    
+    .calculator {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .calculator-display {
+        font-size: 36px;
+        min-height: 60px;
+        padding: 15px;
+    }
+    
+    .calc-btn {
+        height: 60px;
+        width: 60px;
+        font-size: 20px;
+    }
+    
+    .calc-btn.zero {
+        width: 132px;
     }
 }
