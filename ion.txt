@@ -3,12 +3,12 @@ zebra
 covrigo 1
 codru
 morena
-t.6
+t6
 creanga 5/3
 creanga 59
 nikolai costin 44/1
 nikolai costin 61/5
-t.5
+t5
 calea iesilor
 neaga 67
 mateevici 77
