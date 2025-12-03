@@ -79,11 +79,17 @@ button:active {
     border-radius: 3px;
 }
 
+/* Tools Container */
+.tools-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
 /* Calculator styles */
 .calculator-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 30px;
+    flex: 0 0 auto;
 }
 
 .calculator {
@@ -150,7 +156,7 @@ button:active {
 }
 
 .calc-btn.operator {
-    background: #ff9500;
+    background:linear-gradient(135deg, #667eea 0%, #cab2e2 100%);
     color: #fff;
 }
 
@@ -160,7 +166,7 @@ button:active {
 }
 
 .calc-btn.equals {
-    background: #ff9500;
+    background: linear-gradient(135deg, #667eea 0%, #cab2e2 100%);
     color: #fff;
 }
 
@@ -170,6 +176,108 @@ button:active {
     width: 152px;
     text-align: left;
     padding-left: 30px;
+}
+
+/* Tavi Calculator styles */
+.tavi-calculator {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 320px;
+    flex: 0 0 auto;
+}
+
+.tavi-calculator h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.tavi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    min-width: auto;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.calc-tavi-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calc-tavi-btn:hover {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.calc-tavi-btn:active {
+    transform: scale(0.98);
+}
+
+.rezultat-tavi {
+    background: #f8f9ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: none;
+}
+
+.rezultat-tavi.show {
+    display: block;
+}
+
+.rezultat-tavi .result-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+}
+
+.rezultat-tavi .result-item strong {
+    color: #667eea;
+    font-size: 16px;
+}
+
+.rezultat-tavi .result-item span {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 8px;
 }
 
 /* Design responsive pentru telefoane */
@@ -206,11 +314,17 @@ button:active {
         padding: 12px;
     }
     
-    .calculator-container {
-        justify-content: center;
+    .tools-container {
+        flex-direction: column;
+        align-items: center;
     }
     
     .calculator {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .tavi-calculator {
         width: 100%;
         max-width: 320px;
     }
@@ -261,5 +375,14 @@ button:active {
     
     .calc-btn.zero {
         width: 132px;
+    }
+    
+    .tavi-calculator {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .tavi-calculator h3 {
+        font-size: 20px;
     }
 }
