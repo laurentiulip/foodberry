@@ -6,7 +6,8 @@ varlaam
 31 august 46
 testemitianu 20
 testemitianu 30
-armeneasca stefan 3
+armeneasca
+stefan 3
 testimitianu 29/6
 izmail 84
 policlinica 
@@ -30,4 +31,5 @@ bodoni 31
 lapusna
 kogalniceanu 1
 kogalniceanu61
+
 bucuresti 33
