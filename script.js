@@ -209,3 +209,45 @@ function percentage() {
     
     updateDisplay();
 }
+
+// Calculator Tăvi functionality
+function calculeazaTavi() {
+    const totalProduse = parseInt(document.getElementById('totalProduse').value);
+    const capacitateTava = parseInt(document.getElementById('capacitateTava').value);
+    const rezultatDiv = document.getElementById('rezultatTavi');
+    
+    // Validare input
+    if (!totalProduse || totalProduse <= 0) {
+        alert('Te rog introdu numărul total de produse!');
+        return;
+    }
+    
+    if (!capacitateTava || capacitateTava <= 0) {
+        alert('Te rog introdu capacitatea unei tăvi!');
+        return;
+    }
+    
+    // Calcule
+    let taviPline = Math.floor(totalProduse / capacitateTava);
+    let rest = totalProduse % capacitateTava;
+    let taviTotale = taviPline + (rest > 0 ? 1 : 0);
+    
+    // Afișare rezultat
+    let rezultatHTML = `
+        <div class="result-item">
+            <strong>Tăvi pline:</strong>
+            <span>${taviPline}</span>
+        </div>
+        <div class="result-item">
+            <strong>Produse pe ultima tavă:</strong>
+            <span>${rest > 0 ? rest : capacitateTava}</span>
+        </div>
+        <div class="result-item">
+            <strong>Total tăvi necesare:</strong>
+            <span>${taviTotale}</span>
+        </div>
+    `;
+    
+    rezultatDiv.innerHTML = rezultatHTML;
+    rezultatDiv.classList.add('show');
+}
