@@ -2,7 +2,6 @@ bogdan voevod
 mircea 10/3
 mircea 32/4
 mircea 32/10
-bodoni 57
 bodoni 45
 russo
 sadoveanu
@@ -29,7 +28,6 @@ p.rares 49
 p.rares 77
 p.rares 77/1
 anton pan
-viteazu 27
 albisoara
 florilor
 vieru 9
