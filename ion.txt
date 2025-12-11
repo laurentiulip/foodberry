@@ -28,3 +28,5 @@ columna 170
 lupu
 deleanu
 v.voda
+sciusev 106
+
