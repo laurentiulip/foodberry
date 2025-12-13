@@ -165,6 +165,19 @@ button:active {
     color: #000;
 }
 
+.calc-btn.delete {
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc-btn.delete:hover {
+    background: #ee5a5a;
+}
+
 .calc-btn.equals {
     background: linear-gradient(135deg, #667eea 0%, #cab2e2 100%);
     color: #fff;

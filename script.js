@@ -157,7 +157,29 @@ function calculate() {
     }
 }
 
-function toggleSign() {
+function backspace() {
+    if (lastWasEquals) {
+        expression = '0';
+        lastWasEquals = false;
+        updateDisplay();
+        return;
+    }
+    
+    if (expression.length > 1) {
+        expression = expression.slice(0, -1);
+        // Verifică dacă ultimul caracter rămas este un operator
+        const lastChar = expression[expression.length - 1];
+        lastWasOperator = ['+', '-', '×', '÷'].includes(lastChar);
+    } else {
+        expression = '0';
+        lastWasOperator = false;
+    }
+    
+    updateDisplay();
+}
+
+function toggleSign_OLD() {
+    // Funcție veche - păstrată pentru compatibilitate
     if (lastWasEquals) {
         expression = (parseFloat(expression) * -1).toString();
         updateDisplay();

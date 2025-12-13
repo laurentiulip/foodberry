@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<h2>Caută comanda</h2>
-
 <div class="container">
     <input type="text" id="cautare" placeholder="Introdu textul de căutat">
     <button onclick="cauta()">Caută</button>
@@ -23,7 +21,7 @@
             <div class="calculator-display" id="display">0</div>
             <div class="calculator-buttons">
                 <button class="calc-btn clear" onclick="clearDisplay()">C</button>
-                <button class="calc-btn operator" onclick="toggleSign()">+/-</button>
+                <button class="calc-btn delete" onclick="backspace()">⌫</button>
                 <button class="calc-btn operator" onclick="percentage()">%</button>
                 <button class="calc-btn operator" onclick="setOperator('/')">÷</button>
                 
@@ -70,5 +68,6 @@
 </div>
 
 <script src="script.js"></script>
+<script src="snow.js"></script>
 </body>
 </html>
