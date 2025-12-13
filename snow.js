@@ -4,12 +4,17 @@
 (function() {
     'use strict';
 
-    // CONFIGURAȚII
+    // Detectare mobil
+    const isMobile = window.innerWidth < 768;
+    const isSmallMobile = window.innerWidth < 480;
+
+    // CONFIGURAȚII - optimizate pentru mobil
     const CONFIG = {
-        maxSnowflakes: 2000,
+        maxSnowflakes: isSmallMobile ? 400 : (isMobile ? 800 : 2000),
         gravity: 0.08,
-        spawnRate: 1,              // Fulgi noi per frame
-        backgroundFlakeInterval: 1000
+        spawnRate: isSmallMobile ? 0.3 : (isMobile ? 0.5 : 1),
+        backgroundFlakeInterval: isMobile ? 2000 : 1000,
+        maxBackgroundFlakes: isMobile ? 10 : 25
     };
 
     let canvas, ctx;
@@ -170,6 +175,17 @@
                 backdrop-filter: blur(5px);
                 border: 2px solid rgba(255, 215, 0, 0.5);
                 transition: all 0.3s ease;
+                max-width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+            
+            @media (max-width: 480px) {
+                .new-year-message {
+                    font-size: 14px;
+                    padding: 10px 20px;
+                    top: 10px;
+                }
             }
             
             .new-year-message:hover {
@@ -213,6 +229,15 @@
                 font-size: 16px;
                 padding: 12px 25px;
                 width: fit-content;
+                max-width: 90%;
+            }
+            
+            @media (max-width: 480px) {
+                .new-year-message.footer-mode {
+                    font-size: 13px;
+                    padding: 10px 18px;
+                    margin: 20px auto 15px auto;
+                }
             }
             
             .new-year-message.footer-mode:hover {
@@ -380,7 +405,7 @@
 
     // Creează fulgi background (simboluri mari, decorativi)
     function createBackgroundFlake() {
-        if (backgroundFlakes.length >= 25) return;
+        if (backgroundFlakes.length >= CONFIG.maxBackgroundFlakes) return;
 
         const snowflake = document.createElement('div');
         snowflake.className = 'snowflake-bg';
@@ -388,7 +413,7 @@
         const flakeTypes = ['❄', '❅', '❆', '✻', '✼', '❉'];
         snowflake.textContent = flakeTypes[Math.floor(Math.random() * flakeTypes.length)];
         
-        const size = Math.random() * 35 + 30;
+        const size = isMobile ? (Math.random() * 20 + 20) : (Math.random() * 35 + 30);
         const x = Math.random() * window.innerWidth;
         const opacity = Math.random() * 0.25 + 0.15;
         
@@ -629,7 +654,7 @@
         }
         
         createCircleExplosion() {
-            const particleCount = Math.floor(Math.random() * 50) + 80;
+            const particleCount = isMobile ? (Math.floor(Math.random() * 25) + 35) : (Math.floor(Math.random() * 50) + 80);
             for (let i = 0; i < particleCount; i++) {
                 const angle = (Math.PI * 2 / particleCount) * i;
                 const speed = Math.random() * 4 + 3;
@@ -639,7 +664,7 @@
         
         createStarExplosion() {
             const points = 5;
-            const particleCount = 100;
+            const particleCount = isMobile ? 50 : 100;
             for (let i = 0; i < particleCount; i++) {
                 const angle = (Math.PI * 2 / particleCount) * i;
                 const starFactor = (i % (particleCount / points) < (particleCount / points / 2)) ? 1.5 : 0.7;
@@ -650,23 +675,27 @@
         
         createDoubleExplosion() {
             // Prima explozie
-            for (let i = 0; i < 60; i++) {
-                const angle = (Math.PI * 2 / 60) * i;
+            const count1 = isMobile ? 30 : 60;
+            for (let i = 0; i < count1; i++) {
+                const angle = (Math.PI * 2 / count1) * i;
                 particles.push(new Particle(this.x, this.y, angle, Math.random() * 3 + 4, this.color));
             }
             // A doua explozie cu altă culoare
             const color2 = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
-            for (let i = 0; i < 40; i++) {
-                const angle = (Math.PI * 2 / 40) * i;
+            const count2 = isMobile ? 20 : 40;
+            for (let i = 0; i < count2; i++) {
+                const angle = (Math.PI * 2 / count2) * i;
                 particles.push(new Particle(this.x, this.y, angle, Math.random() * 2 + 2, color2));
             }
         }
         
         createRingExplosion() {
-            for (let ring = 0; ring < 3; ring++) {
+            const rings = isMobile ? 2 : 3;
+            const particlesPerRing = isMobile ? 15 : 30;
+            for (let ring = 0; ring < rings; ring++) {
                 const ringColor = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
-                for (let i = 0; i < 30; i++) {
-                    const angle = (Math.PI * 2 / 30) * i;
+                for (let i = 0; i < particlesPerRing; i++) {
+                    const angle = (Math.PI * 2 / particlesPerRing) * i;
                     const speed = 3 + ring * 2;
                     particles.push(new Particle(this.x, this.y, angle, speed, ringColor));
                 }
@@ -674,7 +703,8 @@
         }
         
         createBurstExplosion() {
-            for (let i = 0; i < 120; i++) {
+            const burstCount = isMobile ? 50 : 120;
+            for (let i = 0; i < burstCount; i++) {
                 const angle = Math.random() * Math.PI * 2;
                 const speed = Math.random() * 6 + 1;
                 const color = fireworkColors[Math.floor(Math.random() * fireworkColors.length)];
@@ -756,9 +786,9 @@
         fireworksCanvas.width = window.innerWidth;
         fireworksCanvas.height = window.innerHeight;
         
-        // Faza 1: Artificii normale (primele 15)
+        // Faza 1: Artificii normale (mai puține pe mobil)
         let launchCount = 0;
-        const maxLaunches = 15;
+        const maxLaunches = isMobile ? 8 : 15;
         let textShown = false;
         
         function launchRocket() {
@@ -1123,14 +1153,15 @@
         });
         
         // Lansează și câteva artificii în jurul textului
+        const finalFireworks = isMobile ? 4 : 8;
         setTimeout(() => {
-            for (let i = 0; i < 8; i++) {
+            for (let i = 0; i < finalFireworks; i++) {
                 setTimeout(() => {
                     const x = Math.random() * window.innerWidth;
                     const startY = window.innerHeight + 10;
                     const targetY = Math.random() * (window.innerHeight * 0.3) + window.innerHeight * 0.1;
                     fireworks.push(new Firework(x, startY, targetY));
-                }, i * 200);
+                }, i * 250);
             }
         }, 1500);
     }
