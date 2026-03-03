@@ -1,35 +1,37 @@
-arborilor 21
-t3
-melestiu 11
+stefan 3
+t.3
+putnei
 melestiu 26/6
 dacia 22
 dacia 47/1
-independentei 40
+dacia 27
+dacia 50
+indepentendei 40
 burebista 70
 burebista 120
 cuza voda 1/4
 cuza voda 13/5
 cuza voda 15
 teilor 7/2
+teilor 8
 costiujeni 10
 covrigo 2
 covrigo 5
 decebal 6
 decebal 99
+decebal 76
 soimari
-scate parc
-melestiu 11
+hristobotev
+armeneasca 30
+scate park
 trandafirelor 2/1
 trandafirelor 18
 trandafirelor 20
 ceucari
 grenoble 157/1
 zaikina
-plaiului
-covrigo sarmizegetusa
-viteazu 27
-stefan 3
+plaiului 2
+covrigo sarmizegetuza
+padurii 24
 negruzzi 7
-paduri 24
-hristobotev
-
+viteazul 27
