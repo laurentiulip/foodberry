@@ -4,31 +4,34 @@ parcalab 63
 varlaam
 31 august 99
 31 august 46
-testemitianu 20
-testemitianu 30
-armeneasca
-testimitianu 29/6
+testemiteanu 20
+testemiteanu 30
+alexandri 105
+bucuresti 33
+testemiteanu 29/6
+izmail 16
 izmail 84
-policlinica 
-izmail 45
-testemitianu 3/13
-testemitianu 3a
+policlinica
+miorita 2/3
+miorita 12
+testemiteanu 3/13
+testemiteanu 3a
+covrigo tanase
 sos.hincesti 64
 sos.hincesti 68
 alexandri 16
 alexandri 44
-casu 30 a
+casu 3a
 asachi 44
 asachi 69
-sprincinoea 1a
+sprincenoea 1a
 mateevici 69
 mateevici 71
 unic
 bodoni 5
 bodoni 31
+bodoni 57
 lapusna
 kogalniceanu 1
-kogalniceanu61
-bucuresti 33
-bodoni 57
-miorita 2/3
+kogalniceanu 61
+bernardatii
