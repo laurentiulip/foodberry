@@ -1,5 +1,5 @@
 async function cauta() {
-    const fisierList = ["ion.txt", "alexandru.txt", "oxentie.txt", "lilian.txt"];
+    const fisierList = ["ion.txt", "alexandru.txt", "oxentie.txt", "lilian.txt", "igor.txt"];
     const caut = document.getElementById("cautare").value.toLowerCase();
     const rezultatDiv = document.getElementById("rezultat");
     rezultatDiv.innerHTML = "";
@@ -273,3 +273,4 @@ function calculeazaTavi() {
     rezultatDiv.innerHTML = rezultatHTML;
     rezultatDiv.classList.add('show');
 }
+
