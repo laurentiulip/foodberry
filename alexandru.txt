@@ -1,26 +1,33 @@
 bogdan voevod
+mircea 3
 mircea 10/3
 mircea 32/4
 mircea 32/10
+bodoni 47
 bodoni 45
-russo
-sadoveanu
+russo 17
+russo 59
+sadoveanu 35
+sadoveanu 42
 moscova 9/1
 moscova 21
-studentilor
-tanase covrigo
+moscova 8
+moscova 8/2
+studentilor 7/9
+stefan 132
 badiu 1a
 badiu 11
-t2
+t.2
+t.4
 vlahuta
-t4
+carierei 5a
 kiev 2
 kiev 9
+kiev 16
 aerodromului
-putnei
+m.rosie
 cojbuc
-bodoni
-columna
+bodoni/columna
 eminescu 70
 eminescu 72
 eminescu 74
@@ -28,13 +35,10 @@ p.rares 49
 p.rares 77
 p.rares 77/1
 anton pan
+m.manole 14/1
 albisoara
 florilor
 vieru 9
-puskin 39
 supraten
-moscova 8
-moscova 8/2
-moscova 1
-kiev 16
-
+puskin 39
+doga 22
